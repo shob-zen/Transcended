@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH 01 | GROUNDED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#000; margin-bottom: 70px;">
+
+    <div class="reader-wrap" id="manga-container">
+        <div class="manga-page"><img src="chapter-1/1775122339895.png" alt="Page 1"></div>
+        <div class="manga-page"><img src="chapter-1/1775122368240.png" alt="Page 2"></div>
+        <div class="manga-page"><img src="chapter-1/1775122353182.png" alt="Page 3"></div>
+        <div class="manga-page"><img src="chapter-1/1775122376537.png" alt="Page 4"></div>
+        <div class="manga-page"><img src="chapter-1/1775122387772.png" alt="Page 5"></div>
+        <div class="manga-page"><img src="chapter-1/1775123628950.png" alt="Page 6"></div>
+        <div class="manga-page"><img src="chapter-1/1775123749539.png" alt="Page 7"></div>
+        <div class="manga-page"><img src="chapter-1/1775124499388.png" alt="Page 8"></div>
+        <div class="manga-page"><img src="chapter-1/1775126386391.png" alt="Page 9"></div>
+        <div class="manga-page"><img src="chapter-1/1775129408866.png" alt="Page 10"></div>
+        <div class="manga-page"><img src="chapter-1/1775129426523.png" alt="Page 11"></div>
+        <div class="manga-page"><img src="chapter-1/1775129437500.png" alt="Page 12"></div>
+        <div class="manga-page"><img src="chapter-1/1775134224185.png" alt="Page 13"></div>
+        <div class="manga-page"><img src="chapter-1/1775134243180.png" alt="Page 14"></div>
+        <div class="manga-page"><img src="chapter-1/1775134252361.png" alt="Page 15"></div>
+        <div class="manga-page"><img src="chapter-1/1775134260731.png" alt="Page 16"></div>
+        <div class="manga-page"><img src="chapter-1/1775134270122.png" alt="Page 17"></div>
+        <div class="manga-page"><img src="chapter-1/1775134278468.png" alt="Page 18"></div>
+        <div class="manga-page"><img src="chapter-1/1775136229619.png" alt="Page 19"></div>
+        
+        <div class="end-marker">SYSTEM_SHUTDOWN: CH 01 END</div>
+        
+        <div style="text-align: center; padding-bottom: 50px;">
+            <a href="index.html" class="back-btn">RETURN TO HUB</a>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar-bg">
+            <div id="progress-fill"></div>
+        </div>
+        <div id="page-counter">DATA_SCAN: PAGE 1 / 19</div>
+    </div>
+
+    <script>
+        const fill = document.getElementById('progress-fill');
+        const counter = document.getElementById('page-counter');
+        const pages = document.querySelectorAll('.manga-page');
+        const totalPages = pages.length;
+
+        window.addEventListener('scroll', () => {
+            let current = 1;
+            const screenMid = window.innerHeight / 2;
+
+            pages.forEach((page, index) => {
+                const rect = page.getBoundingClientRect();
+                // Detection for which page is currently in the middle of the viewport
+                if (rect.top < screenMid && rect.bottom > screenMid) {
+                    current = index + 1;
+                }
+            });
+
+            // Update Progress HUD
+            counter.innerText = `DATA_SCAN: PAGE ${current} / ${totalPages}`;
+            const percentage = (current / totalPages) * 100;
+            fill.style.width = percentage + "%";
+        });
+    </script>
+
+</body>
+</html>

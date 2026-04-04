@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSCENDED | ARCHIVES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>ARCHIVES</h1></header>
+    <div class="container">
+        <nav class="nav-tabs">
+            <a href="index.html" class="nav-btn">MANGA</a>
+            <a href="novel-hub.html" class="nav-btn active">NOVEL</a>
+            <a href="profiles.html" class="nav-btn">DOSSIER</a>
+            <a href="#" class="nav-btn" onclick="lockAlert()">SPECIAL ARTS</a>
+        </nav>
+        <div class="author-note">
+            <p>Novel contains the same story similar to the manga but there is more information given in the novel than manga so i recommend reading the novel first before going for the manga.</p>
+            <span>-Shob (The author)</span>
+        </div>
+        <div style="color:var(--gold); font-family:'Orbitron'; letter-spacing:3px; margin-bottom:15px; font-size:0.65rem; border-left: 2px solid var(--gold); padding-left: 10px;">VOLUME 01 // TEXTUAL_RECORDS</div>
+        <div class="ch-list">
+            <a href="novel1.html" class="ch-link"><div><small style="color:var(--gold)">LOG 01</small><br>GROUNDED</div><span>READ</span></a>
+            <a href="novel2.html" class="ch-link"><div><small style="color:var(--gold)">LOG 02</small><br>FRACTURE</div><span>READ</span></a>
+            <a href="#" class="ch-link" style="opacity:0.3" onclick="soonAlert()"><div><small>LOG 03</small><br>THRESHOLD</div><span>LOCKED</span></a>
+            <a href="#" class="ch-link" style="opacity:0.3" onclick="soonAlert()"><div><small>LOG 04</small><br>UNBOUND</div><span>LOCKED</span></a>
+        </div>
+    </div>
+    <div id="overlay-box"><div class="alert-card"><h2 id="alert-title"></h2><p id="alert-msg"></p><a href="#" class="back-btn" onclick="closeAlert()">DISMISS</a></div></div>
+    <script>
+        const box = document.getElementById('overlay-box');
+        function showAlert(h, m) { document.getElementById('alert-title').innerText = h; document.getElementById('alert-msg').innerText = m; box.style.display = 'flex'; }
+        function closeAlert() { box.style.display = 'none'; }
+        function lockAlert() { showAlert("[!] ENCRYPTION ACTIVE", "Special arts will unlock after Volume 1 is finished!!"); }
+        function soonAlert() { showAlert("[!] COMING SOON", "Transmission currently encrypted."); }
+    </script>
+</body>
+</html>

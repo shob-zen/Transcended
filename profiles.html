@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier | TRANSCENDED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>RECORDS</h1></header>
+    <div class="container">
+        <nav class="nav-tabs">
+            <a href="index.html" class="nav-btn">MANGA</a>
+            <a href="novel-hub.html" class="nav-btn">NOVEL</a>
+            <a href="profiles.html" class="nav-btn active">DOSSIER</a>
+            <a href="#" class="nav-btn" onclick="lockAlert()">SPECIAL ARTS</a>
+        </nav>
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('assets/1775305081896.png');"></div>
+            <div class="profile-info">
+                <h2>Zen (The Transcended)</h2>
+                <p><b>Origin:</b> Earth (Survivor of the Gamma Burst).</p>
+                <p><b>Species:</b> Sentinel</p>
+                <p><b>Power Level:</b> Semi-Prime (Rapidly evolving to Alpha).</p>
+                <p><b>Abilities:</b> Superhuman and insane straight with similar powers has primes</p>
+                <p><b>Heavy Grip/Fist:</b> Increases his density to deliver mountain-shattering blows.</p>
+                <p><b>Gamma Durability:</b> High resistance to radiation and physical trauma.</p>
+                <p><b>Personality:</b> Humble, protective, and fueled by the memory of his parents. He is the bridge between Human empathy and Prime power.</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('assets/1775156818285.png');"></div>
+            <div class="profile-info">
+                <h2>Bruce (The General)</h2>
+                <p><b>Origin:</b> Unknown (High-ranking Solar Sentinel).</p>
+                <p><b>Role:</b> Commander of the Sentinel Training Camp.</p>
+                <p><b>Details:</b> Possesses immense physical strength (can lift boulders with one hand). He is the strategist who sees the bigger picture of the war against the Primes.</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('assets/1775249419122.png');"></div>
+            <div class="profile-info">
+                <h2>Miguel (Alpha Prime)</h2>
+                <p><b>Rank:</b> Alpha (Top 3 strongest Alphas).</p>
+                <p><b>Personality:</b> Arrogant, brutal, and follows a strict code of orders.</p>
+                <p><b>Details:</b> He nearly killed Daniel and sees Zen as a "spark" with potential. He doesn't kill for fun, but for the mission of the Primes.</p>
+            </div>
+        </div>
+        <div class="profile-card">
+            <div class="profile-img" style="background-image: url('assets/1775240547607.png');"></div>
+            <div class="profile-info">
+                <h2>Daniel (Star Vessel)</h2>
+                <p><b>Origin:</b> Omnis-7.</p>
+                <p><b>Role:</b> Senior Tactical Member / Tech Genius.</p>
+                <p><b>Abilities:</b> * Nano-Tech Suit: A liquid-metal armor that responds to neural commands.</p>
+                <p><b>Drill Fist:</b> High-speed rotational kinetic strikes.</p>
+                <p><b>Tactical AI:</b> Analyzes enemy movements and structural weaknesses.</p>
+                <p><b>Personality:</b> Cocky and confident, but deeply loyal. He recently learned humility after his brutal loss to Miguel.</p>
+            </div>
+        </div>
+        <div style="text-align: center;"><a href="index.html" class="back-btn">RETURN TO HUB</a></div>
+    </div>
+    <div id="overlay-box"><div class="alert-card"><h2 id="alert-title"></h2><p id="alert-msg"></p><a href="#" class="back-btn" onclick="closeAlert()">DISMISS</a></div></div>
+    <script>
+        const box = document.getElementById('overlay-box');
+        function showAlert(h, m) { document.getElementById('alert-title').innerText = h; document.getElementById('alert-msg').innerText = m; box.style.display = 'flex'; }
+        function closeAlert() { box.style.display = 'none'; }
+        function lockAlert() { showAlert("[!] ENCRYPTION ACTIVE", "Special arts will unlock after Volume 1 is finished!!"); }
+    </script>
+</body>
+</html>
